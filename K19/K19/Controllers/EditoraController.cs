@@ -10,24 +10,24 @@ using K19.Models;
 
 namespace K19.Controllers
 {
-    public class EditorasController : Controller
+    public class EditoraController : Controller
     {
         private K19Context db = new K19Context();
 
-        // GET: Editoras
+        // GET: Editora
         public ActionResult Index()
         {
-            return View(db.Editoras.ToList());
+            return View(db.Editora.ToList());
         }
 
-        // GET: Editoras/Details/5
+        // GET: Editora/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Editora editora = db.Editoras.Find(id);
+            Editora editora = db.Editora.Find(id);
             if (editora == null)
             {
                 return HttpNotFound();
@@ -35,22 +35,22 @@ namespace K19.Controllers
             return View(editora);
         }
 
-        // GET: Editoras/Create
-        public ActionResult Create()
+        // GET: Editora/NovaEditora
+        public ActionResult NovaEditora()
         {
             return View();
         }
 
-        // POST: Editoras/Create
+        // POST: Editora/NovaEditora
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EditoraID,Nome,Email")] Editora editora)
+        public ActionResult NovaEditora([Bind(Include = "EditoraID,Nome,Email")] Editora editora)
         {
             if (ModelState.IsValid)
             {
-                db.Editoras.Add(editora);
+                db.Editora.Add(editora);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,14 +58,14 @@ namespace K19.Controllers
             return View(editora);
         }
 
-        // GET: Editoras/Edit/5
+        // GET: Editora/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Editora editora = db.Editoras.Find(id);
+            Editora editora = db.Editora.Find(id);
             if (editora == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace K19.Controllers
             return View(editora);
         }
 
-        // POST: Editoras/Edit/5
+        // POST: Editora/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,14 +89,14 @@ namespace K19.Controllers
             return View(editora);
         }
 
-        // GET: Editoras/Delete/5
+        // GET: Editora/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Editora editora = db.Editoras.Find(id);
+            Editora editora = db.Editora.Find(id);
             if (editora == null)
             {
                 return HttpNotFound();
@@ -104,13 +104,13 @@ namespace K19.Controllers
             return View(editora);
         }
 
-        // POST: Editoras/Delete/5
+        // POST: Editora/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Editora editora = db.Editoras.Find(id);
-            db.Editoras.Remove(editora);
+            Editora editora = db.Editora.Find(id);
+            db.Editora.Remove(editora);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
