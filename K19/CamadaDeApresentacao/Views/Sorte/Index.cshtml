@@ -4,10 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     string mensagem = "Olá o número é : " + ViewBag.NUmeroDaSorte;
 
+
 }
 
 @for(int i = 0; i < 9; i++)
 {
     <h2>Olá @i </h2>
 }
+@{ 
+    ViewBag.HoraDoServidor = DateTime.Now.ToShortTimeString();
+}
 
+Hora : @ViewBag.HoraDoServidor
