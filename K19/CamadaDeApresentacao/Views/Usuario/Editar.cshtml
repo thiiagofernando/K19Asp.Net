@@ -1,10 +1,13 @@
 ﻿@model CamadaDeApresentacao.Models.Usuario
 @{
     ViewBag.Title = "Editar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+  
 }
 
 <h2>Editar</h2>
+@section Toolbar{
+    <input type="button" value="Remover Cadastro"/>
+    }
 @using (Html.BeginForm())
 {
     @Html.EditorForModel()

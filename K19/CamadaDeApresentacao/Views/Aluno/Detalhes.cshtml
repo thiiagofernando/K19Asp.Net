@@ -2,8 +2,12 @@
 @model CamadaDeApresentacao.Models.Aluno
 @{
     ViewBag.Title = "Detalhes";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
+
+@section Toolbar{
+    <input type="button" value="Remover Cadastro"/>
+    }
 
 <h2>Detalhes</h2>
 

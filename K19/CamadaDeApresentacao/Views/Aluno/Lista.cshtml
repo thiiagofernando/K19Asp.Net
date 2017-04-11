@@ -1,8 +1,13 @@
 ﻿@model ICollection<CamadaDeApresentacao.Models.Aluno>
 @{
     ViewBag.Title = "Lista";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
+
+@section Toolbar{
+    <input type="search" placeholder="Digite o Nome do Aluno"/>
+    <input type="button" value="Buscar" class="btn btn-info"/>
+    }
 
 <h2>Tabela Aluno</h2>
 
@@ -24,25 +29,5 @@
 </table>
 
 @Html.ActionLink("Detalhes", "Detalhes", "Aluno")<br />
-Aceito: @Html.CheckBox(" Aceito ", false )
 
-@using (Html.BeginForm("Detalhes","Aluno"))
-{
-    @Html.CheckBox("Aceito", false);
-    <input type="submit" class="btn btn-info" value="Detalhes"/>
-}
-<br />
-@Html.TextBox("Nome", " ")<br />
-<br />
-@Html.TextArea("Mensagem", "Digite uma Mensagem")<br />
-<br />
-São Paulo
-@Html.RadioButton("CidadeNatal", "São Paulo", true)<br />
-<br />
-Natal
-@Html.RadioButton("CidadeNatal", "Natal", false)<br />
-<br />
-@Html.Hidden("Id", 1)
-<br />
-@Html.Password("Password","Senha")
 

@@ -1,0 +1,12 @@
+﻿@model CamadaDeApresentacao.Models.Post
+
+<article>
+    <header>
+        <h1>@Model.Titulo</h1>
+        <div><small>@Model.Autor - @Model.Data.ToString("dd/MM/yyyy")</small></div>
+    </header>
+    <p>@Model.Texto</p>
+    <footer>
+        Categoria: @Model.Categoria
+    </footer>
+</article>
