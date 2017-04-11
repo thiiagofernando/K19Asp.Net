@@ -37,5 +37,17 @@ namespace CamadaDeApresentacao.Controllers
             }
             return View(lista);
         }
+
+        public ActionResult Editar()
+        {
+            Aluno aluno = new Aluno
+            {
+                AlunoID = 2,
+                Nome = "Jonas Hirata",
+                Email = "jonas@k19.com.br"
+
+            };
+            return View(aluno);
+        }
     }
 }
